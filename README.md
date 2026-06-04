@@ -4,7 +4,7 @@
 
 O **Acolhe SP** une tecnologia e design moderno para centralizar campanhas de arrecadação voltadas a necessidades básicas (alimentação e higiene), moradia e cursos de capacidade profissional.
 
-🔗 **[Acesse o projeto homologado na Vercel](https://SEU-PROJETO.vercel.app)**
+🔗 **[Acesse o projeto homologado na Vercel](https://acolhe-sp.vercel.app/)**
 
 ---
 
@@ -12,7 +12,8 @@ O **Acolhe SP** une tecnologia e design moderno para centralizar campanhas de ar
 
 Pelo fato de a experiência visual ser um pilar fundamental deste projeto, veja abaixo a interface principal da plataforma:
 
-![Preview do Acolhe SP](assets/logo-preview.png)
+![Preview do Acolhe SP](<img width="1898" height="938" alt="image" src="https://github.com/user-attachments/assets/234ab0ed-4354-48ed-b442-d87635177e6d" />
+)
 
 ---
 
