@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acolhe SP — Doações para Migrantes e Refugiados</title>
+  <meta name="description" content="Projeto de extensão universitária que une tecnologia e impacto social para apoiar migrantes e refugiados em São Paulo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#inicio" class="nav__logo" aria-label="Acolhe SP — Voltar ao início">
+          <div class="nav__logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+            </svg>
+          </div>
+          Acolhe<span style="color: var(--color-accent)">SP</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#como-ajudar">Como Ajudar</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <li><a href="#impacto">Impacto</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <a href="#como-ajudar" class="btn btn-primary" aria-label="Fazer uma doação">
+          Quero Doar ❤️
+        </a>
+
+        <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <nav class="nav__mobile" id="mobileMenu" aria-label="Menu mobile">
+        <a href="#sobre"        onclick="closeMenu()">Sobre o Projeto</a>
+        <a href="#como-ajudar" onclick="closeMenu()">Como Ajudar</a>
+        <a href="#parceiros"   onclick="closeMenu()">Parceiros</a>
+        <a href="#impacto"     onclick="closeMenu()">Impacto</a>
+        <a href="#contato"     onclick="closeMenu()">Contato</a>
+        <a href="#como-ajudar" onclick="closeMenu()" style="color:var(--color-accent);font-weight:700;">Quero Doar ❤️</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="hero section" id="inicio" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__content">
+          <div class="hero__eyebrow" aria-label="Extensão Universitária — São Paulo">
+            Extensão Universitária · São Paulo
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+            Todo ser humano<br />merece ser<br /><em>acolhido.</em>
+          </h1>
+
+          <p class="hero__desc">
+            Conectamos doadores à ONGs que apoiam migrantes e refugiados em São Paulo.
+            Sua contribuição transforma vidas — e começa com um clique.
+          </p>
+
+          <div class="hero__cta">
+            <button class="btn btn-primary" onclick="openModal('Doação Geral')" aria-label="Abrir formulário de doação">
+              ❤️ Quero Doar Agora
+            </button>
+            <a href="#sobre" class="btn btn-outline">Saiba mais →</a>
+          </div>
+
+          <div class="hero__stats" aria-label="Números do projeto">
+            <div class="hero__stat">
+              <strong id="stat-pessoas">0</strong>
+              <span>pessoas apoiadas</span>
+            </div>
+            <div class="hero__stat">
+              <strong id="stat-ongs">0</strong>
+              <span>ONGs parceiras</span>
+            </div>
+            <div class="hero__stat">
+              <strong id="stat-doacoes">R$ 0</strong>
+              <span>em doações</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__card">
+            <div class="hero__badge">🔥 Campanha Ativa</div>
+            <div class="hero__card-img">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="22" r="10" fill="white" opacity="0.9"/>
+                <rect x="18" y="34" width="24" height="28" rx="12" fill="white" opacity="0.9"/>
+                <circle cx="55" cy="18" r="12" fill="white" opacity="0.7"/>
+                <rect x="41" y="32" width="28" height="30" rx="14" fill="white" opacity="0.7"/>
+                <circle cx="80" cy="24" r="9" fill="white" opacity="0.5"/>
+                <rect x="69" y="35" width="22" height="26" rx="11" fill="white" opacity="0.5"/>
+                <path d="M50 58 C50 58 38 50 38 43 C38 39 42 37 46 40 C48 41 50 43 50 43 C50 43 52 41 54 40 C58 37 62 39 62 43 C62 50 50 58 50 58Z" fill="#F4793B"/>
+              </svg>
+            </div>
+            <div class="hero__card-meta">
+              <p class="hero__card-title">Meta de Arrecadação 2026</p>
+              <div class="hero__card-progress-label">
+                <span>R$ 47.200 arrecadados</span>
+                <span>63%</span>
+              </div>
+              <div class="hero__card-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100">
+                <div class="hero__card-fill" id="progressFill"></div>
+              </div>
+              <p style="font-size:0.82rem;color:var(--color-text-soft);margin-top:4px;">Meta: R$ 75.000 · 312 doadores</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about section" id="sobre" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__inner">
+
+        <div>
+          <p class="tag">Nossa história</p>
+          <h2 class="about__title" id="about-title">
+            Tecnologia a serviço<br />do impacto humano
+          </h2>
+          <p class="about__text">
+            O <strong>Acolhe SP</strong> nasceu nas salas de aula do curso de Sistemas de Informação
+            como um Projeto de Extensão Universitária. Nossa missão é simples: usar a tecnologia
+            para construir pontes entre quem quer ajudar e quem precisa de apoio.
+          </p>
+          <p class="about__text">
+            Segundo o ACNUR, o Brasil é o terceiro país das Américas em número de refugiados reconhecidos.
+            São Paulo concentra a maior parte dessas pessoas — e também concentra a maior rede de apoio.
+            Somos parte dessa rede.
+          </p>
+        </div>
+
+        <div class="about__pillars" role="list">
+          <div class="about__pillar reveal" role="listitem">
+            <div class="about__pillar-icon" aria-hidden="true">🎓</div>
+            <div class="about__pillar-body">
+              <strong>Origem Universitária</strong>
+              <p>Desenvolvido por estudante do curso de Sistemas de Informação chamado Vitor Almeida como projeto de extensão com impacto real.</p>
+            </div>
+          </div>
+          <div class="about__pillar reveal reveal-delay-1" role="listitem">
+            <div class="about__pillar-icon" aria-hidden="true">🤝</div>
+            <div class="about__pillar-body">
+              <strong>Parceria com ONGs</strong>
+              <p>Trabalhamos com organizações verificadas e de confiança que já atuam nas ruas de São Paulo há anos.</p>
+            </div>
+          </div>
+          <div class="about__pillar reveal reveal-delay-2" role="listitem">
+            <div class="about__pillar-icon" aria-hidden="true">🔍</div>
+            <div class="about__pillar-body">
+              <strong>Transparência Total</strong>
+              <p>Toda doação é rastreada e relatada. Publicamos prestação de contas semestralmente para todos os doadores.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="como-ajudar section" id="como-ajudar" aria-labelledby="ajudar-title">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="tag">Como sua doação ajuda</p>
+        <h2 class="section__title" id="ajudar-title">
+          Cada real faz<br />uma diferença real
+        </h2>
+        <p class="section__subtitle">
+          Escolha uma área de impacto e contribua diretamente para a transformação de vidas
+          em São Paulo. Sua doação é 100% direcionada às ONGs parceiras.
+        </p>
+      </header>
+
+      <div class="cards-grid" role="list">
+
+        <article class="card reveal" role="listitem">
+          <div class="card__header">
+            <div class="card__icon card__icon--food" aria-hidden="true">🍱</div>
+            <p class="card__category card__category--food">Necessidades Básicas</p>
+            <h3 class="card__title">Alimentação & Kits de Higiene</h3>
+            <p class="card__desc">
+              Kits de alimentos não-perecíveis, cestas básicas e itens de higiene pessoal para famílias
+              em situação de vulnerabilidade recém-chegadas ao país.
+            </p>
+          </div>
+          <div class="card__footer">
+            <div class="card__amount">
+              <span>a partir de</span>
+              <strong>R$ 30/mês</strong>
+            </div>
+            <button class="btn btn-card" onclick="openModal('Alimentação & Higiene')" aria-label="Doar para Alimentação e Kits de Higiene">
+              Apoiar esta causa
+            </button>
+          </div>
+        </article>
+
+        <article class="card reveal reveal-delay-1" role="listitem">
+          <div class="card__header">
+            <div class="card__icon card__icon--shelter" aria-hidden="true">🏠</div>
+            <p class="card__category card__category--shelter">Moradia & Acolhimento</p>
+            <h3 class="card__title">Abrigo & Integração Social</h3>
+            <p class="card__desc">
+              Apoio a casas de acolhimento temporário, aluguel social e programas de moradia assistida
+              para famílias de refugiados que precisam de um lar seguro para reconstruir suas vidas.
+            </p>
+          </div>
+          <div class="card__footer">
+            <div class="card__amount">
+              <span>a partir de</span>
+              <strong>R$ 50/mês</strong>
+            </div>
+            <button class="btn btn-card" onclick="openModal('Abrigo & Moradia')" aria-label="Doar para Abrigo e Integração Social">
+              Apoiar esta causa
+            </button>
+          </div>
+        </article>
+
+        <article class="card reveal reveal-delay-2" role="listitem">
+          <div class="card__header">
+            <div class="card__icon card__icon--edu" aria-hidden="true">📚</div>
+            <p class="card__category card__category--edu">Educação & Trabalho</p>
+            <h3 class="card__title">Cursos de Capacitação</h3>
+            <p class="card__desc">
+              Financiamento de cursos de português, informática, gastronomia e outros para promover
+              a autonomia e a inclusão no mercado de trabalho de forma digna e sustentável.
+            </p>
+          </div>
+          <div class="card__footer">
+            <div class="card__amount">
+              <span>a partir de</span>
+              <strong>R$ 25/mês</strong>
+            </div>
+            <button class="btn btn-card" onclick="openModal('Cursos de Capacitação')" aria-label="Doar para Cursos de Capacitação">
+              Apoiar esta causa
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="partners section" id="parceiros" aria-labelledby="parceiros-title">
+    <div class="container">
+      <header class="section__header reveal">
+        <p class="tag">Quem está com a gente</p>
+        <h2 class="section__title" id="parceiros-title">
+          ONGs parceiras verificadas
+        </h2>
+        <p class="section__subtitle">
+          Trabalhamos com organizações sérias e reconhecidas que há anos transformam
+          a realidade de migrantes e refugiados em São Paulo.
+        </p>
+      </header>
+
+      <div class="partners__grid" role="list">
+
+        <div class="partner-card reveal" role="listitem">
+          <div class="partner-card__logo" style="background:#E8F4FC;color:#1A5C6B;">MP</div>
+          <p class="partner-card__name">Missão Paz</p>
+          <p class="partner-card__desc">
+            Mais de 100 anos de história acolhendo imigrantes no Glicério. Oferece
+            abrigo, assistência jurídica, saúde e reinserção social.
+          </p>
+          <a href="https://www.missaopaz.com.br" target="_blank" rel="noopener noreferrer" class="partner-card__link" aria-label="Visitar site da Missão Paz">
+            Visitar site →
+          </a>
+        </div>
+
+        <div class="partner-card reveal reveal-delay-1" role="listitem">
+          <div class="partner-card__logo" style="background:#EAF7F4;color:#2E8A74;">CA</div>
+          <p class="partner-card__name">CAMI</p>
+          <p class="partner-card__desc">
+            Centro de Apoio e Pastoral do Migrante. Atua na defesa dos direitos
+            humanos e na promoção da cidadania de migrantes e refugiados.
+          </p>
+          <a href="https://www.caminternacional.org.br" target="_blank" rel="noopener noreferrer" class="partner-card__link" aria-label="Visitar site do CAMI">
+            Visitar site →
+          </a>
+        </div>
+
+        <div class="partner-card reveal reveal-delay-2" role="listitem">
+          <div class="partner-card__logo" style="background:#FFF4EC;color:#F4793B;">AC</div>
+          <p class="partner-card__name">ACNUR Brasil</p>
+          <p class="partner-card__desc">
+            Agência da ONU para Refugiados no Brasil. Coordena proteção legal,
+            documentação e integração de refugiados reconhecidos no país.
+          </p>
+          <a href="https://www.acnur.org/portugues" target="_blank" rel="noopener noreferrer" class="partner-card__link" aria-label="Visitar site do ACNUR Brasil">
+            Visitar site →
+          </a>
+        </div>
+
+        <div class="partner-card reveal reveal-delay-3" role="listitem">
+          <div class="partner-card__logo" style="background:#F0EBF8;color:#7B4BB8;">IM</div>
+          <p class="partner-card__name">Instituto Migrações e Direitos Humanos</p>
+          <p class="partner-card__desc">
+            Referência nacional em assessoria jurídica e promoção dos direitos de
+            migrantes, refugiados e apátridas em todo o Brasil.
+          </p>
+          <a href="https://www.migrante.org.br" target="_blank" rel="noopener noreferrer" class="partner-card__link" aria-label="Visitar site do Instituto Migrações e Direitos Humanos">
+            Visitar site →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="impact section" id="impacto" aria-labelledby="impacto-title">
+    <div class="container">
+      <div class="impact__inner">
+
+        <div class="impact__quote reveal">
+          <blockquote>
+            "Quando cheguei em São Paulo sem documentos e sem falar português,
+            foi a Missão Paz — apoiada por projetos como este — que me deu um
+            lugar para dormir e aprender. Hoje trabalho com tecnologia."
+          </blockquote>
+          <div class="impact__author">
+            <div class="impact__author-avatar" aria-hidden="true">👤</div>
+            <div class="impact__author-info">
+              <strong>Amara D.</strong>
+              <span>Refugiada do Congo · Desenvolvedora de Software</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact__numbers reveal reveal-delay-1" aria-label="Números de impacto do projeto">
+          <div class="impact__number-card">
+            <p class="num">1.240<span>+</span></p>
+            <p>pessoas atendidas diretamente pelas ONGs parceiras</p>
+          </div>
+          <div class="impact__number-card">
+            <p class="num">87<span>%</span></p>
+            <p>das doações vão diretamente para as atividades das ONGs</p>
+          </div>
+          <div class="impact__number-card">
+            <p class="num">4<span>+</span></p>
+            <p>anos de projeto e extensão universitária ativa</p>
+          </div>
+          <div class="impact__number-card">
+            <p class="num">312</p>
+            <p>doadores ativos que acreditam na transformação</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="contato" aria-label="Rodapé do site">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div>
+          <p class="footer__brand-name">AcolheSP</p>
+          <p class="footer__brand-desc">
+            Projeto de Extensão Universitária do curso de Sistemas de Informação.
+            Tecnologia e empatia a serviço da dignidade humana. Desenvolvido por <a href="https://www.linkedin.com/in/Vitordealmeidadev/" target="_blank">Vitor Almeida</a>.
+          </p>
+          <div class="footer__socials" aria-label="Redes sociais">
+            <a href="#" class="footer__social" aria-label="Instagram">📸</a>
+            <a href="#" class="footer__social" aria-label="Twitter / X">🐦</a>
+            <a href="#" class="footer__social" aria-label="LinkedIn">💼</a>
+            <a href="#" class="footer__social" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navegação</h4>
+          <ul role="list">
+            <li><a href="#sobre">Sobre o Projeto</a></li>
+            <li><a href="#como-ajudar">Como Ajudar</a></li>
+            <li><a href="#parceiros">ONGs Parceiras</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul role="list">
+            <li><a href="mailto:contato@acolhesp.org">contato@acolhesp.org</a></li>
+            <li><a href="tel:+5511912345678">(11) 91234-5678</a></li>
+            <li><a href="#">São Paulo, SP · Brasil</a></li>
+            <li><a href="#">Seg–Sex, 9h–18h</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <ul role="list">
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Prestação de Contas</a></li>
+            <li><a href="#">CNPJ: 00.000.000/0001-00</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 AcolheSP · Projeto de Extensão Universitária · Todos os direitos reservados.</p>
+        <p>Feito com ❤️ por estudantes de <a href="#">Sistemas de Informação por Vitor Almeida</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal">
+      <button class="modal__close" onclick="closeModal()" aria-label="Fechar modal">✕</button>
+
+      <h2 class="modal__title" id="modalTitle">Fazer uma doação</h2>
+      <p class="modal__subtitle" id="modalSubtitle">Sua contribuição vai para: <strong id="modalCause">Doação Geral</strong></p>
+
+      <div class="modal__amounts" role="group" aria-label="Selecione um valor de doação">
+        <button class="modal__amount-btn" onclick="selectAmount(this, 25)"  aria-label="Doar R$ 25">R$ 25</button>
+        <button class="modal__amount-btn" onclick="selectAmount(this, 50)"  aria-label="Doar R$ 50">R$ 50</button>
+        <button class="modal__amount-btn" onclick="selectAmount(this, 100)" aria-label="Doar R$ 100">R$ 100</button>
+        <button class="modal__amount-btn" onclick="selectAmount(this, 150)" aria-label="Doar R$ 150">R$ 150</button>
+        <button class="modal__amount-btn" onclick="selectAmount(this, 200)" aria-label="Doar R$ 200">R$ 200</button>
+        <button class="modal__amount-btn" onclick="selectAmount(this, 500)" aria-label="Doar R$ 500">R$ 500</button>
+      </div>
+
+      <div class="modal__input-group">
+        <label for="customAmount">Ou insira outro valor (R$)</label>
+        <input type="number" id="customAmount" placeholder="Ex: 75,00" min="5" aria-label="Valor personalizado de doação" />
+      </div>
+
+      <div class="modal__input-group">
+        <label for="donorName">Seu nome</label>
+        <input type="text" id="donorName" placeholder="Como prefere ser chamado(a)?" aria-label="Nome do doador" />
+      </div>
+
+      <div class="modal__input-group">
+        <label for="donorEmail">E-mail para recibo</label>
+        <input type="email" id="donorEmail" placeholder="seu@email.com" aria-label="E-mail para recibo de doação" />
+      </div>
+
+      <button class="btn btn-primary modal__submit" onclick="submitDonation()" aria-label="Confirmar doação">
+        ❤️ Confirmar Doação
+      </button>
+
+      <p class="modal__secure" aria-label="Transação segura">
+        🔒 Transação 100% segura · Dados criptografados · Recibo por e-mail
+      </p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
