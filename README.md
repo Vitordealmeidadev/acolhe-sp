@@ -14,7 +14,7 @@ Pelo fato de a experiência visual ser um pilar fundamental deste projeto, veja 
 
 
 (<img width="1898" height="938" alt="image" src="https://github.com/user-attachments/assets/234ab0ed-4354-48ed-b442-d87635177e6d" />
-)
+
 
 ---
 
